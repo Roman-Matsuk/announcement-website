@@ -1,0 +1,25 @@
+.form {
+
+  &__title {
+    margin: 20px 0;
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: 150px auto;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  &__input {
+    width: calc(100% - 15px);
+  }
+
+  &__text {
+    width: calc(100% - 15px);
+  }
+
+  &__button {
+    margin-right: 10px;
+  }
+}
