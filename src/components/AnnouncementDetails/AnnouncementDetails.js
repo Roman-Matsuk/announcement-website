@@ -20,6 +20,7 @@ export const AnnouncementDetails = ({
 
   useEffect(() => {
     const announcement = announcements.find(ann => ann.id === announcementId)
+    // eslint-disable-next-line array-callback-return
     const similar = announcements.filter(ancmnt => {
       const ancmntTitleArr = ancmnt.title.split(' ');
       const announcementTitleArr = announcement.title.split(' ');
