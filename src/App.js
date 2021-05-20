@@ -32,7 +32,7 @@ function App() {
   }
 
   const filteredAnnouncements = announcements
-    .filter(movie => movie.title.toLowerCase().includes(query.toLowerCase()));
+    .filter(announcement => announcement.title.toLowerCase().includes(query.toLowerCase()));
 
   
   const render = () => {
