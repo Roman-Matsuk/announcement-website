@@ -34,7 +34,6 @@ function App() {
   const filteredAnnouncements = announcements
     .filter(announcement => announcement.title.toLowerCase().includes(query.toLowerCase()));
 
-  
   const render = () => {
     if (showDetails) {
       return (
