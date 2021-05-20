@@ -20,10 +20,24 @@ export const AnnouncementDetails = ({
 
   useEffect(() => {
     const announcement = announcements.find(ann => ann.id === announcementId)
-    const similar = announcements.filter(ann => (
-      (announcement.title.includes(ann.title) || announcement.description.includes(ann.description))
-      && ann.id !== announcementId
-    ));
+    const similar = announcements.filter(ancmnt => {
+      const ancmntTitleArr = ancmnt.title.split(' ');
+      const announcementTitleArr = announcement.title.split(' ');
+      const ancmntDescArr = ancmnt.description.split(' ');
+      const announcementDescArr = announcement.description.split(' ');
+
+      for (let i = 0; i < announcementTitleArr.length; i++) {
+        if (ancmntTitleArr.includes(announcementTitleArr[i]) && ancmnt.id !== announcement.id) {
+          return ancmnt;
+        }
+      }
+
+      for (let i = 0; i < announcementDescArr.length; i++) {
+        if (ancmntDescArr.includes(announcementDescArr[i]) && ancmnt.id !== announcement.id) {
+          return ancmnt;
+        }
+      }
+    });
     
     if (similar.length > 0) {
       similar.length = 3;
