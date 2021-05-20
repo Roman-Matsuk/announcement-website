@@ -5,7 +5,7 @@ import './Announcement.scss';
 export const Announcement = ({ announcement, setShowDetails, setAnnouncementId }) => {
 
   return (
-    <div className="card">
+    <div className="card card--parameters">
       <div className="card__body">
         <h3 className="card__title">
            {announcement.title}
